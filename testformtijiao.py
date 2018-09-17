@@ -11,8 +11,8 @@ def main():
     f = b.get_form()
     
 
-    f['loginName'].value=610115199504167264
-    f['loginPassword'].value = 19950416
+    f['loginName'].value='610115199504167264'
+    f['loginPassword'].value = '19950416'
 
     b.submit_form(f)
 
