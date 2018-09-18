@@ -9,20 +9,7 @@ import re
 dui="√"
 cuo="×"
 
-options = webdriver.ChromeOptions()
-prefs = {
-    'profile.default_content_setting_values' :
-        {
-        'notifications' : 2
-         }
-}
-options.add_experimental_option('prefs',prefs)
-browser = webdriver.Chrome("D:\softInstall\chromedriver.exe",chrome_options = options)
-
-
-
-
-# browser = webdriver.Chrome("D:\softInstall\chromedriver.exe")
+browser = webdriver.Chrome("D:\softInstall\chromedriver.exe")
 
 #登陆
 browser.get("http://jxjyxx.xidian.edu.cn/cesp/index_backup.jsp")
@@ -52,7 +39,7 @@ ti={}
 timu_list=[]
 
 #答题
-for i in range(1,51,1):
+for i in range(1,31,1):
     # browser.find_element_by_xpath("html/body/div[2]/div[2]/form/table[1]/tbody/tr[3]/td/input").click()
     #选择按钮
     browser.find_element_by_xpath("html/body/div[2]/div[2]/form/table["+str(i)+"]/tbody/tr[2]/td/input").click()
@@ -63,16 +50,15 @@ for i in range(1,51,1):
     #大题目不规则处理
     timu_str=timu[len(timu)-1]
 
-    #答案，不规则问题处理
-    daan=browser.find_element_by_xpath("html/body/div[2]/div[2]/form/table["+str(i)+"]/tbody/tr[2]/td").text
-
+    #答案，不规则问题处理,rstrip()去掉末尾空格
+    daan=browser.find_element_by_xpath("html/body/div[2]/div[2]/form/table["+str(i)+"]/tbody/tr[2]/td").text.rstrip()
     daan_str=""
     for i in range(len(daan)-1,-1,-1):
         if daan[i]==' ' or daan[i]=='.' or daan[i]=='A' or daan[i]=='B' or daan[i]=='C' or daan[i]=='D' or daan[i]=='、':
             daan_str=daan[i+1:len(daan)]
             break
-
     
+    #题目与答案容器
     ti[timu_str]=daan_str
     timu_list.append(timu_str)
 
@@ -94,10 +80,7 @@ for i in range(2,31,1):
 
     if pajuan==dui:
         f=open("./test.txt",'a')
-        f.write(timu_list[i-2]+"---"+ti[timu_list[i-2]]+"\n")
-
-# if pajuan=="×":
-
-# print(ti)
+        #题目与答案用*号隔开
+        f.write(timu_list[i-2]+"*"+ti[timu_list[i-2]]+"\n")
 
 
