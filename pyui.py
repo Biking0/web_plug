@@ -7,7 +7,7 @@
 import os
  
 # 此处的path为UI文件存放的路径
-path = r'D:\softInstall\Anaconda3\Lib\site-packages\PyQt5\uic'
+path = r'D:\project\qt\pyqt'
  
 # 记录转换成功的文件数量
 count = 0
