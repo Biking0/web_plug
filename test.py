@@ -1,9 +1,18 @@
 
-ti={}
 
-timu="123"
-daan="1"
 
-ti['123']=daan
+for i in range(10,-1,-1):
+    print(i)
 
-# print(ti.)
+
+
+
+
+
+
+
+
+# s="你好"
+# print(len(s))
+# print(s[0])
+
