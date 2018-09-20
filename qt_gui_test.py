@@ -1,4 +1,7 @@
-# -*- coding: utf-8 -*-
+
+#界面转化文件测试
+
+# # -*- coding: utf-8 -*-
 
 # Form implementation generated from reading ui file 'D:\project\qt\pyqt\mainwindow.ui'
 #

@@ -1,4 +1,6 @@
 
+#尝试robobrowser模拟post登陆，失败
+
 import requests
 import robobrowser 
 

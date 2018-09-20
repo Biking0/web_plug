@@ -1,4 +1,9 @@
 
+# 2018/09/21 01:35 
+#网站答题脚本
+#核心代码
+
+
 from selenium import webdriver
 import time
 import datetime
@@ -13,8 +18,10 @@ cuo="×"
 
 
 def login():
+    
     #打开浏览器
     browser = webdriver.Chrome("D:\softInstall\chromedriver.exe")
+
     #登陆
     browser.get("http://jxjyxx.xidian.edu.cn/cesp/index_backup.jsp")
     browser.find_element_by_name("loginName").send_keys("610115199504167264")   
@@ -86,6 +93,4 @@ def login():
             f=open("./test.txt",'a')
             #题目与答案用*号隔开
             f.write(timu_list[i-2]+"*"+ti[timu_list[i-2]]+"\n")
-
-
 

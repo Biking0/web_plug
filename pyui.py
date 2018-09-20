@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 #coding=utf-8
+
+#将Qt设计的界面文件转化pyqt文件
 '''
 自动识别未转换的UI文件并转换为对应版本的py文件
         —— by Joy
